@@ -1,0 +1,50 @@
+Question one:
+class ClassA{
+    public void method(int value){
+        System.out.println(value);
+    }
+    public void method(){
+        System.out.println(value);
+    }
+    int value;
+}
+class TestClassA{
+    public static void main(String args[]){
+    ClassA classA = new ClassA();
+    classA.value = 10;
+    classA.method();
+    classA.method(20);
+    }
+}
+请选择正确结果： 输出 10 20
+
+Question two:
+3. （构造方法）关于构造方法，下列说法正确的是：
+A. 每个类中都有至少一个构造方法
+B. 一个类中可以有多个构造方法
+D. 构造方法可以有多个参数
+
+Question three:
+6. （构造函数）有以下代码
+class MyClass{
+    int value;
+}
+public class TestMyClass{
+    public static void main(String args[]){
+        MyClass mc1 = new MyClass();
+        MyClass mc2 = new MyClass(10);
+        System.out.println(mc1.value);
+        System.out.println(mc2.value);
+    }
+}
+问：这个程序能否编译通过？如果可以，输出结果是什么？如果不可以，则应该如何修改？
+Answer:无法通过，无实参构造器
+class MyClass{
+    int value;
+
+    public MyClass(){};
+
+    public MyClass(int value){
+        this.value = value;
+    };
+}
