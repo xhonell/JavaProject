@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<root>
+    <user>xhonell</user>
+    <msg>Hello World</msg>
+    <user age="18" sex="男">xhonell</user>
+    <!--    &lt;表示小于符号-->
+    <title>判断 4 &lt; 5</title>
+    <!--CDATA方法实现多个符号实体转义-->
+    <data>
+        <![CDATA[5>4]]>
+    </data>
+    <!--    使用Xpath解析XML文档 -->
+</root>

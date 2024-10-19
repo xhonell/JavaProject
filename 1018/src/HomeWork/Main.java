@@ -2,10 +2,7 @@ package HomeWork;
 
 import org.junit.Test;
 
-import java.util.Scanner;
-
 public class Main {
-    public static Scanner sc = new Scanner(System.in);
 
     /**
      * 测试类：测试fileName方法
@@ -39,6 +36,10 @@ public class Main {
         BasePlusSalesEmployee basePlusSalesEmployee = new BasePlusSalesEmployee("赵六", 4, 12000, 0.1, 1000);
         System.out.println(basePlusSalesEmployee.totalSalary());
     }
+
+    /**
+     * 测试类：测试user方法
+     */
 
     @Test
     public void userTest() {
