@@ -20,6 +20,7 @@ public class Main {
     public void bankTest() {
         Bank bank = new Bank();
         Account account = bank.openAccount(1, "123456", 2);
+        System.out.println(account.getId());
         System.out.println("账户余额为：" + bank.deposit(account, 100));
         System.out.println("账户余额为：" + bank.withdraw(account, 100));
     }
