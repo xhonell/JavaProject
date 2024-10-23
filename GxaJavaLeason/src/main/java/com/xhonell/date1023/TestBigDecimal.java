@@ -12,10 +12,10 @@ import java.math.BigDecimal;
  */
 public class TestBigDecimal {
     public static void main(String[] args) {
-        System.out.println(2.0-1.1);//0.9  发生精度丢
+        System.out.println(2.0 - 1.1);//0.9  发生精度丢
         //  防止精度丢失  构造器使用字符串
-        BigDecimal  bigDecimal=new BigDecimal(2.0+"");
-        BigDecimal  bigDecimal1=new BigDecimal("1.1");
+        BigDecimal bigDecimal = new BigDecimal(2.0 + "");
+        BigDecimal bigDecimal1 = new BigDecimal("1.1");
         System.out.println(bigDecimal.subtract(bigDecimal1));
 
     }

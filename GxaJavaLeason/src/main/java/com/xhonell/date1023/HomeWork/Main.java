@@ -10,6 +10,7 @@ import java.util.Date;
  * <p>Project:JavaProject - Main
  * <p>POWER by xhonell on 2024-10-23 17:00
  * description:
+ *
  * @author xhonell
  * @version 1.0
  * @since 1.8
@@ -17,6 +18,7 @@ import java.util.Date;
 public class Main {
     /**
      * 测试类：测试FormatTool工具类
+     *
      * @throws ParseException
      */
     @Test
@@ -24,9 +26,9 @@ public class Main {
         System.out.println(FormatTool.dateToLocaldate(new Date()));
         System.out.println(FormatTool.localDateToDate(LocalDate.now()));
         System.out.println(FormatTool.stringToLocalDate("20191023", "yyyyMMdd"));
-        System.out.println(FormatTool.stringToDate("20191023","yyyyMMdd"));
+        System.out.println(FormatTool.stringToDate("20191023", "yyyyMMdd"));
         System.out.println(FormatTool.dateToString(new Date(), "yyyy-MM-dd"));
         System.out.println(FormatTool.localDateToString(LocalDate.now(), "yyyy-MM-dd"));
-        System.out.println(FormatTool.stringtoLocalDate("20191023" ,"yyyyMMdd"));
+        System.out.println(FormatTool.stringtoLocalDate("20191023", "yyyyMMdd"));
     }
 }

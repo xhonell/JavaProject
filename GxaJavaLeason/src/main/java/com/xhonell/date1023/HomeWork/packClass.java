@@ -10,7 +10,7 @@ package com.xhonell.date1023.HomeWork;
  * @since 1.8
  */
 public class packClass {
-    public void transition(){
+    public void transition() {
         String str = "123";
         System.out.println(Integer.parseInt(str));
         System.out.println(Double.parseDouble(str));
@@ -22,20 +22,20 @@ public class packClass {
         System.out.println(Integer.toString(4));
     }
 
-    public String getString(String str){
-       if(! str.matches("-?\\\\d+(\\\\.\\\\d+)?")) {
-           return "不是数字";
-       }
-       int a = Integer.parseInt(str);
-       System.out.println(a);
-       double b = Double.parseDouble(str);
-       System.out.println(b);
+    public String getString(String str) {
+        if (!str.matches("-?\\\\d+(\\\\.\\\\d+)?")) {
+            return "不是数字";
+        }
+        int a = Integer.parseInt(str);
+        System.out.println(a);
+        double b = Double.parseDouble(str);
+        System.out.println(b);
 
-       if (str.trim().isEmpty()){
-           return null;
-       }
+        if (str.trim().isEmpty()) {
+            return null;
+        }
 
-       return str;
+        return str;
 
     }
 }

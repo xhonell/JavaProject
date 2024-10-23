@@ -16,9 +16,9 @@ public class TestSystem {
         System.out.println(System.currentTimeMillis());//获得当前的时间戳毫秒值  1729667176659
         //
 
-        int []  arr={1,2,4,3,5};
-        int  []  newArr=new int[9];//{2,4,3,0,0,0,0,0}
-        System.arraycopy(arr,1,newArr,0,4);//ArrayIndexOutOfBoundsException
+        int[] arr = {1, 2, 4, 3, 5};
+        int[] newArr = new int[9];//{2,4,3,0,0,0,0,0}
+        System.arraycopy(arr, 1, newArr, 0, 4);//ArrayIndexOutOfBoundsException
         System.out.println(Arrays.toString(newArr));
         a();
         System.out.println("==========================");
@@ -29,7 +29,8 @@ public class TestSystem {
 //            System.out.println("输出信息");
 //        }
     }
-    public   static   void   a(){
+
+    public static void a() {
         System.out.println("===a");
         System.exit(0);//终止java 虚拟机
     }

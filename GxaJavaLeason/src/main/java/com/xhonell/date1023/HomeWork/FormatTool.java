@@ -17,17 +17,16 @@ import java.util.Date;
  */
 public class FormatTool {
     public static LocalDate dateToLocaldate(Date date) {
-        if (date != null){
+        if (date != null) {
             String dateString = dateToString(date, "yyyyMMdd");
             return stringToLocalDate(dateString, "yyyyMMdd");
-        }
-        else return null;
+        } else return null;
     }
 
     public static Date localDateToDate(LocalDate date) throws ParseException {
-        if (date != null){
+        if (date != null) {
             String dateString = localDateToString(date, "yyyyMMdd");
-            return stringToDate(dateString,"yyyyMMdd");
+            return stringToDate(dateString, "yyyyMMdd");
         }
         return null;
     }
@@ -37,7 +36,7 @@ public class FormatTool {
         return LocalDate.parse(dateString, formatter);
     }
 
-    public static Date stringToDate(String dateString,String pattern) throws ParseException {
+    public static Date stringToDate(String dateString, String pattern) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat(pattern);
         return formatter.parse(dateString);
     }
@@ -47,12 +46,12 @@ public class FormatTool {
         return formatter.format(date);
     }
 
-    public static LocalDate stringtoLocalDate(String dateString, String pattern){
+    public static LocalDate stringtoLocalDate(String dateString, String pattern) {
         return LocalDate.parse(dateString, DateTimeFormatter.ofPattern(pattern));
     }
 
 
-    public static String localDateToString(LocalDate date, String pattern){
+    public static String localDateToString(LocalDate date, String pattern) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return date.format(formatter);
     }

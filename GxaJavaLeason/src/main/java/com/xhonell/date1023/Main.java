@@ -13,7 +13,7 @@ public class Main {
      * 测试类：测试课堂学习进度
      */
     @Test
-    public void studyClassTest(){
+    public void studyClassTest() {
         System.out.println(2.0 - 1.1);
         /*精度丢失要使用字符串的构造器*/
         BigDecimal bd1 = new BigDecimal("2.0");
@@ -24,13 +24,13 @@ public class Main {
     /**
      * 测试类：测试系统类学习进度
      * description:
-     *     SimpleDateFormat:格式化时间格式
-     *         format(Date date):将Date类型的时间格式化为String类型的时间
-     *         parse(String str):将String类型的时间格式化为Date类型的时间
-     *     DateTimeFormatter:格式化时间格式
+     * SimpleDateFormat:格式化时间格式
+     * format(Date date):将Date类型的时间格式化为String类型的时间
+     * parse(String str):将String类型的时间格式化为Date类型的时间
+     * DateTimeFormatter:格式化时间格式
      */
     @Test
-    public void StudySystemTest(){
+    public void StudySystemTest() {
         System.err.println("Error Message");
 
         /*LocalTime类:获取当前时间*/

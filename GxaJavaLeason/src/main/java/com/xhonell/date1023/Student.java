@@ -12,7 +12,7 @@ import java.util.Date;
  * Version: v1.0
  */
 public class Student {
-    private  String  name;//null
+    private String name;//null
     private Date birthday;//null  0
     private LocalDate startTime;//null  0
 
