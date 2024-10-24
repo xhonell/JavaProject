@@ -9,10 +9,11 @@ package com.xhonell.date1024;
  * @version 1.0
  * @since 1.8
  */
-public class BizException extends RuntimeException{
-    public BizException(){}
+public class BizException extends RuntimeException {
+    public BizException() {
+    }
 
-    public BizException(String message){
+    public BizException(String message) {
         super(message);
     }
 }

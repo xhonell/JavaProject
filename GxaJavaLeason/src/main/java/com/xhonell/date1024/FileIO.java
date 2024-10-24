@@ -15,14 +15,14 @@ import java.util.Arrays;
  */
 public class FileIO {
 
-    public void fileIO(){
+    public void fileIO() {
         String path = "F:\\Users\\xhonell\\Documents\\Note\\笔记";
         File file = new File(path);
 
         System.out.println(file.canRead());
         System.out.println(file.delete());
 
-        if ( !file.exists() )
+        if (!file.exists())
             System.out.println(file.mkdirs());
 
         System.out.println(Arrays.toString(file.list()));

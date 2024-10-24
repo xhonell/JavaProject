@@ -30,7 +30,7 @@ public class PackClass {
         }
     }
 
-    public static String isBank(String str){
-        return str.trim().isEmpty()? null:str.trim();
+    public static String isBank(String str) {
+        return str.trim().isEmpty() ? null : str.trim();
     }
 }

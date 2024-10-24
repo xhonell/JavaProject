@@ -13,9 +13,9 @@ import java.util.Arrays;
  */
 public class FiltrationWord {
 
-    private static String [] sensitiveWords = {"白痴", "笨", "冰毒", "死", "杀", "奥巴马", "特朗普", "安倍晋三"};
+    private static String[] sensitiveWords = {"白痴", "笨", "冰毒", "死", "杀", "奥巴马", "特朗普", "安倍晋三"};
 
-    public static String fileWord(String word){
+    public static String fileWord(String word) {
         StringBuffer sb = new StringBuffer(word);
         for (String sensitiveWord : sensitiveWords) {
             int start = sb.indexOf(sensitiveWord);
@@ -23,11 +23,11 @@ public class FiltrationWord {
             char[] xh = new char[sensitiveWord.length()];
 
             if (sensitiveWord.length() >= 3) xh = new char[3];
-            Arrays.fill(xh,'*');
+            Arrays.fill(xh, '*');
             String strXh = new String(xh);
-            while(start != -1){
-                sb.replace(start, start+sensitiveWord.length(),strXh);
-                start = sb.indexOf(sensitiveWord, start+sensitiveWord.length());
+            while (start != -1) {
+                sb.replace(start, start + sensitiveWord.length(), strXh);
+                start = sb.indexOf(sensitiveWord, start + sensitiveWord.length());
             }
 
         }

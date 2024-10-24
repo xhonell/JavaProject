@@ -17,13 +17,13 @@ public class Main {
      * 测试类：测试NullPointerException类
      */
     @Test
-    public void NullPointerExceptionTest(){
+    public void NullPointerExceptionTest() {
         NullPointerExceptionClass nullPointerExceptionClass = new NullPointerExceptionClass("xhonell", 18, 23.4);
-        try{
+        try {
             System.out.println(nullPointerExceptionClass);
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println(e.getMessage());
-        }finally {
+        } finally {
             nullPointerExceptionClass.setAge(19);
             System.out.println(nullPointerExceptionClass.getAge());
         }
@@ -34,7 +34,7 @@ public class Main {
      * description：将敏感词替换为星号；
      */
     @Test
-    public void chatTest(){
+    public void chatTest() {
 
         StringBuffer stringBuffer = new StringBuffer("安倍是白痴,毒害奥巴马,枪杀特朗普,给拜登喂食冰毒，然后安倍进山进行躲避;\n" +
                 "安倍是白痴，毒害奥巴马，枪杀特朗普，给拜登喂食冰毒，然后安倍晋三进行躲避；\n");
@@ -48,7 +48,7 @@ public class Main {
      * 测试类：测试FileIO类
      */
     @Test
-    public void fileIoTest(){
+    public void fileIoTest() {
         FileIO fileIO = new FileIO();
         fileIO.fileIO();
 

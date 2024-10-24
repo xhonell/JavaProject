@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 public class Main {
 
     @Test
-    public void filtrationWordTest(){
+    public void filtrationWordTest() {
         String chatString = "安倍是白痴，毒害奥巴马，枪杀特朗普，给拜登喂食冰毒，然后安倍晋三进行躲避";
         System.out.println(FiltrationWord.fileWord(chatString));
     }

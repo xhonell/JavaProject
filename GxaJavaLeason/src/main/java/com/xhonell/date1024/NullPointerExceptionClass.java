@@ -18,7 +18,8 @@ public class NullPointerExceptionClass {
     private Integer age;
     private Double salary;
 
-    public NullPointerExceptionClass(String name, Integer age, Double salary) {}
+    public NullPointerExceptionClass(String name, Integer age, Double salary) {
+    }
 
 
 }
