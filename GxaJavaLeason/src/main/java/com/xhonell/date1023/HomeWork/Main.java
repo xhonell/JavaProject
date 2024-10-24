@@ -30,5 +30,8 @@ public class Main {
         System.out.println(FormatTool.dateToString(new Date(), "yyyy-MM-dd"));
         System.out.println(FormatTool.localDateToString(LocalDate.now(), "yyyy-MM-dd"));
         System.out.println(FormatTool.stringtoLocalDate("20191023", "yyyyMMdd"));
+        System.out.println(PackClass.isBank(" 123 "));
+        System.out.println(PackClass.toInteger("942942412"));
+
     }
 }

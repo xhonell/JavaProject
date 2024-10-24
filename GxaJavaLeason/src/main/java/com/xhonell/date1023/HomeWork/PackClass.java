@@ -9,8 +9,8 @@ package com.xhonell.date1023.HomeWork;
  * @version 1.0
  * @since 1.8
  */
-public class packClass {
-    public void transition() {
+public class PackClass {
+    public static void transition() {
         String str = "123";
         System.out.println(Integer.parseInt(str));
         System.out.println(Double.parseDouble(str));
@@ -22,20 +22,15 @@ public class packClass {
         System.out.println(Integer.toString(4));
     }
 
-    public String getString(String str) {
-        if (!str.matches("-?\\\\d+(\\\\.\\\\d+)?")) {
-            return "不是数字";
-        }
-        int a = Integer.parseInt(str);
-        System.out.println(a);
-        double b = Double.parseDouble(str);
-        System.out.println(b);
-
-        if (str.trim().isEmpty()) {
+    public static Integer toInteger(String str) {
+        try {
+            return Integer.parseInt(str);
+        } catch (Exception e) {
             return null;
         }
+    }
 
-        return str;
-
+    public static String isBank(String str){
+        return str.trim().isEmpty()? null:str.trim();
     }
 }
