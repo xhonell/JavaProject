@@ -13,7 +13,9 @@ import java.io.FileNotFoundException;
  * @since 1.8
  */
 public class TraverseDirectory {
-    public static void traverseDirectory(File file) throws FileNotFoundException {
+    public static void traverseDirectory(File file, String prep) throws FileNotFoundException {
+
+        System.out.println(prep + file.getAbsolutePath());
 
         if (!file.exists())
             throw new FileNotFoundException(file.getAbsolutePath());
@@ -26,11 +28,10 @@ public class TraverseDirectory {
 
             for (File fileOne : files) {
                 if (fileOne.isDirectory()) {
-                    System.out.println(fileOne.getAbsolutePath());
-                    traverseDirectory(fileOne);
-                } else System.out.println("\t" + fileOne.getAbsolutePath());
+                    traverseDirectory(fileOne, prep+"\t");
+                } else System.out.println(prep +"\t"+ fileOne.getAbsolutePath());
             }
-        } else System.out.println(file.getAbsolutePath());
+        }
 
     }
 }

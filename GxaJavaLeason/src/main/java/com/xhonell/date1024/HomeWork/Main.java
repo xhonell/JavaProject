@@ -1,5 +1,6 @@
 package com.xhonell.date1024.HomeWork;
 
+import com.xhonell.date1025.FileTools;
 import org.junit.Test;
 
 import java.io.File;
@@ -20,12 +21,14 @@ public class Main {
     public void filtrationWordTest() {
         String chatString = "安倍是白痴，毒害奥巴马，枪杀特朗普，给拜登喂食冰毒，然后安倍晋三进行躲避";
         System.out.println(FiltrationWord.fileWord(chatString));
+        System.out.println(FileTools.getFullFileName("F:\\Users\\xhonell\\Pictures\\Saved Pictures\\test.png"));
+
     }
 
     @Test
     public void traverseDirectoryTest() throws FileNotFoundException {
-        String path = "F:\\Users\\xhonell\\Pictures";
+        String path = "C:\\Users\\xhonell\\WPSDrive";
         File file = new File(path);
-        TraverseDirectory.traverseDirectory(file);
+        TraverseDirectory.traverseDirectory(file, "");
     }
 }
