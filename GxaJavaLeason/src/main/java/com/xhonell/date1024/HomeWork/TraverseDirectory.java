@@ -28,8 +28,8 @@ public class TraverseDirectory {
 
             for (File fileOne : files) {
                 if (fileOne.isDirectory()) {
-                    traverseDirectory(fileOne, prep+"\t");
-                } else System.out.println(prep +"\t"+ fileOne.getAbsolutePath());
+                    traverseDirectory(fileOne, prep + "\t");
+                } else System.out.println(prep + "\t" + fileOne.getAbsolutePath());
             }
         }
 

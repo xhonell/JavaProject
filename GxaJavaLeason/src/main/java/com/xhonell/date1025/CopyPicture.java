@@ -16,28 +16,29 @@ import java.util.Arrays;
 public class CopyPicture {
 
     public static int lengthIO = 0;
+
     public static boolean copyPicture(String src, String dest) throws IOException {
-        byte[] buffer=fileInputPicture(src);
-        fileOutputPicture(src,dest,buffer);
+        byte[] buffer = fileInputPicture(src);
+        fileOutputPicture(src, dest, buffer);
         return true;
     }
 
     private static byte[] fileInputPicture(String path) throws IOException {
         FileInputStream inputStream = new FileInputStream(path);
-        byte [] buffer = new byte[102400];
+        byte[] buffer = new byte[102400];
         int temp;
-        while(( temp = inputStream.read(buffer)) != -1){
-                lengthIO = temp;
+        while ((temp = inputStream.read(buffer)) != -1) {
+            lengthIO = temp;
         }
         inputStream.close();
-        return Arrays.copyOf(buffer,lengthIO);
+        return Arrays.copyOf(buffer, lengthIO);
     }
 
-    private static void fileOutputPicture(String src,String path,byte[] buffer) throws IOException {
+    private static void fileOutputPicture(String src, String path, byte[] buffer) throws IOException {
         File file = new File(path);
         if (!file.exists())
-            System.out.println(file.mkdirs()?"文件创建成功":"文件创建失败");
-        path = path +"\\" + FileTools.getFullFileName(src);
+            System.out.println(file.mkdirs() ? "文件创建成功" : "文件创建失败");
+        path = path + "\\" + FileTools.getFullFileName(src);
         FileOutputStream outputStream = new FileOutputStream(path);
         outputStream.write(buffer);
         outputStream.close();
@@ -49,7 +50,7 @@ public class CopyPicture {
         int length = fileReader.read(buffer);
         fileReader.close();
         fileWriter(Arrays.copyOf(buffer, length));
-        System.out.println(Arrays.toString(Arrays.copyOf(buffer, length+2)));
+        System.out.println(Arrays.toString(Arrays.copyOf(buffer, length + 2)));
     }
 
     public static void fileWriter(char[] buffer) throws IOException {

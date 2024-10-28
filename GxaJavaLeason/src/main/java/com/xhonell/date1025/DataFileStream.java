@@ -27,7 +27,7 @@ public class DataFileStream {
         try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(Paths.get(PATH)))) {
             Object obj = ois.readObject();
             return (User[]) obj;
-        } catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             System.out.println("文件未找到");
             return users;
         } catch (IOException e) {
@@ -43,18 +43,19 @@ public class DataFileStream {
         FileOutputStream fos = new FileOutputStream(PATH);
         ObjectOutputStream dos = new ObjectOutputStream(fos);
         for (int i = 0; i < localUsers.length; i++) {
-            if (localUsers[i] ==null){
+            if (localUsers[i] == null) {
                 isFlag = true;
                 localUsers[i] = user;
                 break;
-            }if (localUsers[i].getName().equals(user.getName())){
+            }
+            if (localUsers[i].getName().equals(user.getName())) {
                 System.out.println("用户名已存在");
                 break;
             }
         }
         if (!isFlag) {
             System.out.println("注册失败");
-        }else System.out.println("注册成功");
+        } else System.out.println("注册成功");
         dos.writeObject(localUsers);
         dos.flush();
         dos.close();

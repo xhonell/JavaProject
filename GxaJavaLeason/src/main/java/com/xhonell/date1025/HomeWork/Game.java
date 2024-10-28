@@ -20,7 +20,7 @@ public class Game implements Serializable {
     private Integer victory;
     private Integer defeat;
 
-    public Game(String gameName){
+    public Game(String gameName) {
         this.gameName = gameName;
         victory = 0;
         defeat = 0;
@@ -28,7 +28,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return  "游戏名称='" + gameName + '\'' +
+        return "游戏名称='" + gameName + '\'' +
                 ", 胜利场次=" + victory +
                 ", 失败场次=" + defeat + "\n"
                 ;

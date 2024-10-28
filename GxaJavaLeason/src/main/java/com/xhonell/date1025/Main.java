@@ -22,7 +22,7 @@ public class Main {
     public void copyPictureTest() throws IOException {
         String src = "F:\\Users\\xhonell\\Documents\\论文\\开题报告.docx";
         String path = "F:\\Users\\xhonell\\Pictures";
-        System.out.println(FileTools.getFullFileName(src) + (CopyPicture.copyPicture(src, path)?" 拷贝成功":" 拷贝失败"));
+        System.out.println(FileTools.getFullFileName(src) + (CopyPicture.copyPicture(src, path) ? " 拷贝成功" : " 拷贝失败"));
     }
 
     @Test
@@ -34,8 +34,8 @@ public class Main {
     @Test
     public void dataFileStreamTest() throws IOException, ClassNotFoundException {
         DataFileStream dataFileStream = new DataFileStream();
-        dataFileStream.saveDataOutputStream(new User("黄雄" , "123123"));
-        dataFileStream.saveDataOutputStream(new User("xhonell" , "123123"));
+        dataFileStream.saveDataOutputStream(new User("黄雄", "123123"));
+        dataFileStream.saveDataOutputStream(new User("xhonell", "123123"));
 
         System.out.println(Arrays.toString(dataFileStream.readDataInputStream()));
     }

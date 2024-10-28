@@ -22,7 +22,7 @@ public class BufferedFile {
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         char[] buffer = new char[1024];
         int length;
-        while((length = bufferedReader.read(buffer)) != -1){
+        while ((length = bufferedReader.read(buffer)) != -1) {
             bufferedWriter.write(buffer, 0, length);
         }
 

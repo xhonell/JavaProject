@@ -20,6 +20,7 @@ import static com.xhonell.date1025.DataFileStream.PATH;
 public class Main {
     /**
      * 主函数：用于测试登录和注册方法
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -29,6 +30,7 @@ public class Main {
 
     /**
      * 测试类：测试exchangeFileTest类，文件能否正常交换
+     *
      * @throws IOException
      */
     @Test
@@ -38,15 +40,15 @@ public class Main {
 //      /*temp.txt 可以用File创建，使用结束后自动给删除*/
         String temp = "F:\\Users\\xhonell\\Documents\\Projects\\IdeaProjects\\JavaProject\\GxaJavaLeason\\src\\main\\java\\com\\xhonell\\date1025\\HomeWork\\temp.txt";
         ExchangeFile exchangeFile = new ExchangeFile();
-        
+
         String fileSrc = exchangeFile.readFile(src);//源文件
-        exchangeFile.writeFile(temp , fileSrc);
-        
+        exchangeFile.writeFile(temp, fileSrc);
+
         String filePath = exchangeFile.readFile(path);//目标文件
-        exchangeFile.writeFile(src , filePath);
+        exchangeFile.writeFile(src, filePath);
 
         String fileTemp = exchangeFile.readFile(temp);
-        exchangeFile.writeFile(path , fileTemp);
+        exchangeFile.writeFile(path, fileTemp);
     }
 
     @Test
@@ -60,6 +62,6 @@ public class Main {
         ExchangeFile exchangeFile = new ExchangeFile();
         String file = exchangeFile.readFile(src);
         path = path + "\\" + fileName + LocalDate.now() + suffix;
-        exchangeFile.writeFile(path , file);
+        exchangeFile.writeFile(path, file);
     }
 }
