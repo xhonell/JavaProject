@@ -236,6 +236,12 @@ public class LoginRegister {
         }
     }
 
+    /**
+     * 查询用户
+     *
+     * @param user
+     * @param users
+     */
     public void inquireByName(User user, User[] users) {
         System.out.println("请输入您要查询的用户名称");
         String name = sc.next();
