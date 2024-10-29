@@ -15,9 +15,10 @@ public class Main {
 
     /**
      * 买票
+     *
      * @param args
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SaleTicket saleTicket_01 = new SaleTicket("线程一");
         SaleTicket saleTicket_02 = new SaleTicket("线程二");
         SaleTicket saleTicket_03 = new SaleTicket("线程三");
@@ -41,7 +42,6 @@ public class Main {
         threadYoung.start();
         threadAgedness.start();
     }*/
-
 
 
 }

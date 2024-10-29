@@ -17,8 +17,8 @@ public class Ticket {
     private static final int MAX_TICKET = 100;
     public static int ticket = MAX_TICKET;
 
-    public synchronized int saleTicket(){
-        if (--ticket >= MIN_TICKET && ticket <= MAX_TICKET){
+    public synchronized int saleTicket() {
+        if (--ticket >= MIN_TICKET && ticket <= MAX_TICKET) {
             return ticket;
         }
         return -1;

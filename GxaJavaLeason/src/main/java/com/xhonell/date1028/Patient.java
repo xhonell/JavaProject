@@ -9,7 +9,7 @@ package com.xhonell.date1028;
  * @version 1.0
  * @since 1.8
  */
-public class Patient{
+public class Patient {
     public static void main(String[] args) {
         VipPatient vipPatient = new VipPatient();
         CommonPatient commonPatient = new CommonPatient(vipPatient);
@@ -23,14 +23,14 @@ public class Patient{
 /**
  * Vip线程，具有优先执行权
  */
-class VipPatient extends Thread{
+class VipPatient extends Thread {
     public Integer patientId = 20;
 
     @Override
     public void run() {
-        while(patientId > 0){
+        while (patientId > 0) {
             try {
-                Thread.sleep((int)(Math.random()*1000));
+                Thread.sleep((int) (Math.random() * 1000));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -42,19 +42,19 @@ class VipPatient extends Thread{
 /**
  * 普通线程
  */
-class CommonPatient extends Thread{
+class CommonPatient extends Thread {
     private final Thread vipPatient;
     public Integer patientId = 50;
 
-    public CommonPatient(VipPatient vipPatient){
+    public CommonPatient(VipPatient vipPatient) {
         this.vipPatient = vipPatient;
     }
 
     @Override
     public void run() {
-        while(patientId > 0){
+        while (patientId > 0) {
             try {
-                Thread.sleep((int)(Math.random()*1000));
+                Thread.sleep((int) (Math.random() * 1000));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
