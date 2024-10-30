@@ -1,6 +1,6 @@
 package com.xhonell.date1030;
 
-import com.xhonell.date1029.HomeWork.Worker;
+
 import org.junit.Test;
 
 import java.util.*;
