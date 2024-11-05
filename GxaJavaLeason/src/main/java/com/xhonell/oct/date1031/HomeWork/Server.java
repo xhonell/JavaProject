@@ -43,13 +43,13 @@ public class Server implements Runnable {
             ss = new ServerSocket(port); // 绑定端口号
             while (true) {
                 Socket cs = ss.accept(); // 开启监听
-                if (cs.isClosed()){
+                if (cs.isClosed()) {
                     System.out.println("有个小黑子尝试访问服务器！");
                 }
 
                 hash.forEach((k, v) -> {
                     if (hash.containsKey(k)) {
-                        if(System.currentTimeMillis()- (Long)v <= 60*1000){
+                        if (System.currentTimeMillis() - (Long) v <= 60 * 1000) {
                             DataOutputStream dos = null;
                             try {
                                 dos = new DataOutputStream(cs.getOutputStream());
@@ -61,7 +61,7 @@ public class Server implements Runnable {
                                 dos.flush();//刷新缓冲流 立即推送
                             } catch (IOException e) {
                                 System.out.println(e.getMessage());
-                            }finally{
+                            } finally {
                                 try {
                                     cs.close();
                                 } catch (IOException e) {
@@ -72,12 +72,12 @@ public class Server implements Runnable {
                     }
                 });
                 //cs 有新的客户端 来了  保存到集合中
-                if (!cs.isClosed()){
+                if (!cs.isClosed()) {
                     System.out.println("连接成功," + cs.getInetAddress().getHostAddress());
                     arr.add(cs); // 将当前Socket信息存储到集合
                     //为这个客户端单独起一个线程
                     new Rec_Sen_Thread(cs).start(); // 开启服务器消息接收并转发线程
-                }else{
+                } else {
                     System.out.println("小黑子尝试访问失败：" + cs.getInetAddress().getHostAddress());
                 }
 
@@ -121,23 +121,23 @@ public class Server implements Runnable {
                     {
 
                         for (String s : Sensitive.sensitive) {
-                            if (str.contains(s)){
+                            if (str.contains(s)) {
                                 str = cs.getInetAddress() + "： 因为语言不和谐，就只能把他人给和谐了";
                                 arr.remove(cs);
                                 Long date = System.currentTimeMillis();
-                                hash.put(cs,date);
+                                hash.put(cs, date);
                                 cs.close();
                                 break;
                             }
                         }
 
                         /*AI私聊，有可能进入循环导致其他线程抢不到，我不太清楚，没测试过多人*/
-                        if (str.contains("召唤AI")){
+                        if (str.contains("召唤AI")) {
 
                             DataOutputStream dos = new DataOutputStream(cs.getOutputStream());
                             dos.writeUTF(ai);
                             String s = str;
-                            while (true){
+                            while (true) {
                                 s = dis.readUTF(new DataInputStream(cs.getInputStream()));
                                 if (s.contains("退出"))
                                     break;
@@ -191,10 +191,10 @@ public class Server implements Runnable {
         new Thread(server).start(); // 开启线程
     }
 
-    public  String tomHashMap(String str) {
-        HashMap<String,String> hashMap = new HashMap<>();
+    public String tomHashMap(String str) {
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("你好", "您好！我是人机");
-        hashMap.put("新年好","现在距离新年还有"+ ((new Date(2025,0,1).getTime() - System.currentTimeMillis())/360000/24 + "天"));
+        hashMap.put("新年好", "现在距离新年还有" + ((new Date(2025, 0, 1).getTime() - System.currentTimeMillis()) / 360000 / 24 + "天"));
         hashMap.put("xhonell", "他是一个伟大的添砖Java师");
         hashMap.put("早上好", "早上好！祝您一天都有好心情！");
         hashMap.put("晚上好", "晚上好！愿您有一个美好的夜晚！");
@@ -206,7 +206,7 @@ public class Server implements Runnable {
         hashMap.put("书推荐", "这取决于您的兴趣领域。如果是技术书籍，可以看看《代码大全》、《设计模式》；如果是小说，可以阅读《三体》、《解忧杂货店》等。");
         hashMap.put("再见", "再见，期待与您的下次交流！");
 
-        for (HashMap.Entry<String,String> entry : hashMap.entrySet()) {
+        for (HashMap.Entry<String, String> entry : hashMap.entrySet()) {
             if (str.contains(entry.getKey())) {
                 return entry.getValue();
             }

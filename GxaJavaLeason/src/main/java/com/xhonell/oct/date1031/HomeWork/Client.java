@@ -12,33 +12,37 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * Description:
  * Version: V1.0
  */
+
 /**
  * 要求： 客户端开启发送消息和接收消息线程
  */
 
 public class Client implements Runnable {
     Socket cs = null;
-    String nick=null;
-//    String host="172.16.104.138"; // 远端服务器名称和端口
+    String nick = null;
+    //    String host="172.16.104.138"; // 远端服务器名称和端口
     /*自己玩*/
     String host = " 192.168.47.184";
-    int port=8081;
-    public Client(){
+    int port = 8081;
+
+    public Client() {
         new Sensitive();
     }
+
     public Client(String host, int port) {
         this.host = host;
         this.port = port;
         new Sensitive();
     }
+
     @Override
     public void run() {
         try {
             cs = new Socket(host, port); // 建立连接
             /*AtomicBoolean isFlag = new AtomicBoolean(true);
             while(isFlag.get()){*/
-                System.out.println("请输入你的昵称:"); // 只输出昵称提示
-                nick = new Scanner(System.in).next();
+            System.out.println("请输入你的昵称:"); // 只输出昵称提示
+            nick = new Scanner(System.in).next();
              /*   Sensitive.sensitive.forEach(s -> {
                     if(!nick.contains(s)) {
                         System.out.println("你的名字不太合法，再给你一个机会吧！");
@@ -60,11 +64,14 @@ public class Client implements Runnable {
             e.printStackTrace();
         }
     }
+
     class RecThread extends Thread { // 接收消息线程
         Socket cs = null;
+
         public RecThread(Socket cs) {
             this.cs = cs;
         }
+
         public void run() {
             String str;
             DataInputStream dis = null;
@@ -89,6 +96,7 @@ public class Client implements Runnable {
             }
         }
     }
+
     class SendThread extends Thread { // 客户端发送线程
         Socket cs = null;
 
@@ -117,7 +125,7 @@ public class Client implements Runnable {
                     }
                     // 将消息中的真实 IP 地址替换为假的 IP 地址
                     String fakeIp = "添砖Java师"; // 假的 IP 地址
-                    dos.writeUTF(fakeIp +  nick + ": " + str); // 输出
+                    dos.writeUTF(fakeIp + nick + ": " + str); // 输出
                     dos.flush(); // 立即从缓冲发送
                 }
             } catch (Exception e) {
@@ -133,15 +141,16 @@ public class Client implements Runnable {
             }
         }
     }
+
     public static void main(String[] args) {
         Client c = new Client("localhost", 8081);
         {
             System.out.println("请输入内部密码：");
-            String passWord =  new Scanner(System.in).next();
+            String passWord = new Scanner(System.in).next();
             if ("做大做强，再创辉煌".equals(passWord)) {
                 System.err.println("密码正确！你好，天选打工人！");
                 new Thread(c).start();
-            }else {
+            } else {
                 System.out.println("密码不对，问问旁边的盆友！");
             }
         }

@@ -25,13 +25,13 @@ public class TomCatClient {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
         String socketStr = "";
-        while (!socketStr.equals("拜拜")){
+        while (!socketStr.equals("拜拜")) {
             System.out.print("xhonell：");
             socketStr = new Scanner(System.in).nextLine();
             bufferedWriter.write(socketStr);
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            System.out.println("TomCat:" +bufferedReader.readLine());
+            System.out.println("TomCat:" + bufferedReader.readLine());
         }
 
         bufferedReader.close();

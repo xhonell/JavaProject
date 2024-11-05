@@ -33,7 +33,7 @@ public class TomCatServer {
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
 
         String str = "";
-        while(!(str= bufferedReader.readLine()).equals("拜拜")){
+        while (!(str = bufferedReader.readLine()).equals("拜拜")) {
             bufferedWriter.write(tomHashMap(str));
             bufferedWriter.newLine();
             bufferedWriter.flush();
@@ -47,13 +47,13 @@ public class TomCatServer {
     }
 
     public static String tomHashMap(String str) {
-        HashMap<String,String> hashMap = new HashMap<>();
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("你好", "您好！我的主人,我是人机TomCat");
-        hashMap.put("新年好","现在距离新年还有"+ ((new Date(2025,0,1).getTime() - System.currentTimeMillis())/3600 + "小时"));
+        hashMap.put("新年好", "现在距离新年还有" + ((new Date(2025, 0, 1).getTime() - System.currentTimeMillis()) / 3600 + "小时"));
         hashMap.put("xhonell", "他是一个伟大的添砖Java师");
         hashMap.put("拜拜", "再见,期待您的下次光临");
 
-        for (HashMap.Entry<String,String> entry : hashMap.entrySet()) {
+        for (HashMap.Entry<String, String> entry : hashMap.entrySet()) {
             if (str.contains(entry.getKey())) {
                 return entry.getValue();
             }

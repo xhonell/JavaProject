@@ -18,7 +18,7 @@ public class Sensitive {
     public static Vector<String> sensitive = new Vector<>();
 
 
-    public  Sensitive(){
+    public Sensitive() {
         sensitive.add("黄雄");
         sensitive.add("小可爱");
         sensitive.add("干饭");

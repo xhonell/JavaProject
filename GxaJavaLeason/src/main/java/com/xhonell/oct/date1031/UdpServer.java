@@ -19,11 +19,11 @@ import java.net.SocketException;
  */
 public class UdpServer {
     public static void main(String[] args) throws IOException {
-        byte  []  arr=new byte[1024];
+        byte[] arr = new byte[1024];
         //创建数据包
-        DatagramPacket  datagramPacket=new DatagramPacket(arr,0,arr.length);
+        DatagramPacket datagramPacket = new DatagramPacket(arr, 0, arr.length);
         //创建服务器
-        DatagramSocket  socket=new DatagramSocket(8581);
+        DatagramSocket socket = new DatagramSocket(8581);
         //解析数据
         socket.receive(datagramPacket);//把客户端发送的信息 装入数据包 数据包再把数据解析到arr数组中
         System.out.println(new String(arr).trim());

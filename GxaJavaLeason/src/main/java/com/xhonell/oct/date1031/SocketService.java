@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class SocketService {
 
-    public static void main(String [] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         int part = 10112;
         System.out.println("创建服务器成功");
         ServerSocket serverSocket = new ServerSocket(part);
@@ -47,15 +47,15 @@ public class SocketService {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream));
             String message = "";
-            while (! message .equals("拜拜")){
+            while (!message.equals("拜拜")) {
                 try {
-                    message=bufferedReader.readLine();
+                    message = bufferedReader.readLine();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println("客户端(请求)说:"+message);
+                System.out.println("客户端(请求)说:" + message);
                 System.out.println("请输入回复(响应)内容:");
-                message=new Scanner(System.in).next();
+                message = new Scanner(System.in).next();
                 try {
                     bufferedWriter.write(message);
                 } catch (IOException e) {
