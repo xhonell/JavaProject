@@ -10,7 +10,7 @@ import lombok.Data;
 public class BizException extends Exception {
     private Integer code;
 
-    public BizException(BizExceptionCode bizExceptionCode){
+    public BizException(BizExceptionCode bizExceptionCode) {
 
         //从枚举中获得MSG
         super(bizExceptionCode.getMsg());

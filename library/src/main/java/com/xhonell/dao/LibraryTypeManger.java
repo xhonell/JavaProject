@@ -36,7 +36,7 @@ public class LibraryTypeManger {
             int i = statument.executeUpdate();
             if (i > 0) {
                 System.out.println("增加图书类型成功!");
-            }else {
+            } else {
                 System.out.println("增加图书类型失败!");
             }
         } catch (SQLException e) {
@@ -62,7 +62,7 @@ public class LibraryTypeManger {
             if (i > 0) {
                 System.out.println("修改图书类型成功!");
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("修改图书类型失败!");
         } finally {
@@ -77,7 +77,7 @@ public class LibraryTypeManger {
         PreparedStatement statument = jdbc.getStatument(sql);
         try {
             ResultSet resultSet = statument.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 TbClassify tbLibrary = new TbClassify();
                 tbLibrary.setClaId(resultSet.getLong("cla_id"));
                 tbLibrary.setClaName(resultSet.getString("cla_name"));
@@ -86,7 +86,7 @@ public class LibraryTypeManger {
 
             if (!list.isEmpty()) {
                 list.forEach(System.out::println);
-            }else {
+            } else {
                 System.out.println("暂无数据");
             }
         } catch (SQLException e) {
@@ -111,7 +111,7 @@ public class LibraryTypeManger {
             if (i > 0) {
                 System.out.println("删除图书类型成功!");
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("删除图书类型失败!");
         } finally {

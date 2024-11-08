@@ -39,7 +39,7 @@ public class LibraryDao {
             int i = statument.executeUpdate();
             if (i > 0) {
                 System.out.println("增加图书馆信息成功!");
-            }else {
+            } else {
                 System.out.println("增加图书馆信息失败!");
             }
         } catch (SQLException e) {
@@ -70,7 +70,7 @@ public class LibraryDao {
             if (i > 0) {
                 System.out.println("修改图书馆信息成功!");
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("修改图书馆信息失败!");
         } finally {
@@ -85,7 +85,7 @@ public class LibraryDao {
         PreparedStatement statument = jdbc.getStatument(sql);
         try {
             ResultSet resultSet = statument.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 TbLibrary tbLibrary = new TbLibrary();
                 tbLibrary.setLibraryId(resultSet.getLong("library_id"));
                 tbLibrary.setLibraryName(resultSet.getString("library_name"));
@@ -95,7 +95,7 @@ public class LibraryDao {
 
             if (!list.isEmpty()) {
                 list.forEach(System.out::println);
-            }else {
+            } else {
                 System.out.println("暂无数据");
             }
         } catch (SQLException e) {

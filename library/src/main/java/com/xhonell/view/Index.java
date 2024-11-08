@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class Index {
     public static final Scanner scanner = new Scanner(System.in);
+
     public void index() {
         System.out.println("======欢迎使用图书管理系统======");
         System.out.println("请选择您要进行的操作：\n\t1、登录\n\t2、取消");

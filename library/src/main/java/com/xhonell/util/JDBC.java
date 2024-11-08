@@ -32,7 +32,7 @@ public class JDBC {
     public Connection getConnect() {
 
         try {
-            conn = DriverManager.getConnection(url, user,password);
+            conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -40,7 +40,7 @@ public class JDBC {
         return conn;
     }
 
-    public PreparedStatement getStatument(String sql){
+    public PreparedStatement getStatument(String sql) {
         try {
             if (conn == null || conn.isClosed())
                 getConnect();
@@ -51,9 +51,9 @@ public class JDBC {
         return stmt;
     }
 
-    public boolean getClose(){
+    public boolean getClose() {
         try {
-            if (rs!= null && !rs.isClosed())
+            if (rs != null && !rs.isClosed())
                 rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,8 +72,8 @@ public class JDBC {
 
         try {
             if (conn != null && !conn.isClosed())
-                 conn.close();
-        } catch (SQLException e){
+                conn.close();
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }

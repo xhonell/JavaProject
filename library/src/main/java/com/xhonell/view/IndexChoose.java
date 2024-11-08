@@ -16,10 +16,12 @@ import static com.xhonell.view.Index.scanner;
  * <p>POWER by xhonell on 2024-11-08 09:26
  * <p>description：
  * <p>idea：
+ *
  * @author xhonell
  * @version 1.0
  * @since 1.8
- */public class IndexChoose {
+ */
+public class IndexChoose {
     public void login() {
         System.out.println("======进入登录页面======");
         System.out.println("请输入您的手机号：");
@@ -63,7 +65,7 @@ import static com.xhonell.view.Index.scanner;
                     new IndexAdmin().menu(tbLibrarianLogin);
                 }
             }
-        }else{
+        } else {
             try {
                 throw new BizException(BizExceptionCode.FAILED_LOGIN);
             } catch (BizException e) {
@@ -73,7 +75,6 @@ import static com.xhonell.view.Index.scanner;
         }
 
     }
-
 
 
     public void cancel() {

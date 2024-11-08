@@ -16,12 +16,14 @@ import static com.xhonell.oct.date1015.Shopping.scanner;
 public class Main {
     /**
      * 测试sql数据库
+     *
      * @param args
      */
     public static void main(String[] args) {
-       index();
+        index();
     }
-    public static void index(){
+
+    public static void index() {
         System.out.println("请选择你要进行的操作：\n\t1、登录\n\t2、注册");
         Menu menu = new Menu();
         System.out.print("我的选择是：");

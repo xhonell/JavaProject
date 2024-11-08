@@ -31,7 +31,7 @@ public class IndexMenu {
             System.out.println("请选择您要进行的操作：\n\t1、添加管理员\n\t" +
                     "2、修改管理员信息\n\t3、删除管理员\n\t4、查询所有管理员\n\t5、退出系统");
             System.out.print("请输入您的选择：");
-            switch (scanner.nextInt()){
+            switch (scanner.nextInt()) {
                 case 1:
                     addAdmin();
                     break;
@@ -59,7 +59,7 @@ public class IndexMenu {
         PreparedStatement statument = jdbc.getStatument(sql);
         try {
             ResultSet resultSet = statument.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 TbLibrarian tbLibrarian = new TbLibrarian();
                 tbLibrarian.setLibId(resultSet.getLong("lib_id"));
                 tbLibrarian.setLibName(resultSet.getString("lib_name"));
@@ -72,7 +72,7 @@ public class IndexMenu {
 
             if (!list.isEmpty()) {
                 list.forEach(System.out::println);
-            }else {
+            } else {
                 System.out.println("暂无数据");
             }
         } catch (SQLException e) {
@@ -95,7 +95,7 @@ public class IndexMenu {
             int i = statument.executeUpdate();
             if (i > 0) {
                 System.out.println("删除成功");
-            } else{
+            } else {
                 System.out.println("删除失败");
                 menu();
             }
@@ -124,7 +124,7 @@ public class IndexMenu {
             int i = statument.executeUpdate();
             if (i > 0) {
                 System.out.println("修改成功");
-            }else {
+            } else {
                 System.out.println("修改失败");
                 menu();
             }
@@ -156,7 +156,7 @@ public class IndexMenu {
         if (new JDBCMethod().add(tbLibrarian)) {
             System.out.println("添加成功");
 
-        }else {
+        } else {
             try {
                 throw new BizException(BizExceptionCode.FAILED_ADD);
             } catch (BizException e) {

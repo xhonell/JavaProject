@@ -6,10 +6,10 @@ package com.xhonell.exception;
 public enum BizExceptionCode {
 
     /*定义枚举常量
-    * 设定常量的要求
-    *   1、多个单词组成
-    *   2、全英文、全大写
-    *   3、核心问题在前，设计业务在后*/
+     * 设定常量的要求
+     *   1、多个单词组成
+     *   2、全英文、全大写
+     *   3、核心问题在前，设计业务在后*/
 
     //手机号不合法
     ILLLEGAL_PHONE_NUMBER(1003, "手机号不合法"),
@@ -33,6 +33,7 @@ public enum BizExceptionCode {
         this.code = code;
         this.msg = msg;
     }
+
     public Integer getCode() {
         return code;
     }

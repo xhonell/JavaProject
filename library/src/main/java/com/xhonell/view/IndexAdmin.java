@@ -17,13 +17,13 @@ import static com.xhonell.view.Index.scanner;
  * @since 1.8
  */
 public class IndexAdmin {
-    public void menu(TbLibrarian tbLibrarian){
+    public void menu(TbLibrarian tbLibrarian) {
         while (true) {
             System.out.println("====== 菜单界面 ======");
             System.out.println("请选择您要进行的操作：\n\t1、图书馆信息管理\n\t" +
                     "2、图书分类管理\n\t3、图书馆信息管理\n\t4、学生信息管理\n\t5、借阅记录管理\n\t6、退出系统");
             System.out.print("请输入您的选择：");
-            switch (scanner.nextInt()){
+            switch (scanner.nextInt()) {
                 case 1:
                     libraryManger();
                     break;
@@ -47,7 +47,7 @@ public class IndexAdmin {
                     "2、修改图书分类\n\t3、查询图书分类\n\t4、删除图书分类\n\t5、返回");
             LibraryTypeManger libraryTypeManger = new LibraryTypeManger();
             System.out.print("请输入您的选择：");
-            switch (scanner.nextInt()){
+            switch (scanner.nextInt()) {
                 case 1:
                     libraryTypeManger.addLibraryType();
                     break;

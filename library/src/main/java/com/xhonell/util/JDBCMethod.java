@@ -21,24 +21,24 @@ import static com.xhonell.MainApp.jdbc;
  * @since 1.8
  */
 public class JDBCMethod {
-    public boolean add(Object o){
-        if (o instanceof TbLibrarian){
+    public boolean add(Object o) {
+        if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
 
             String sql = "insert into tb_librarian(lib_phone,lib_password,lib_age,lib_name) values(?,?,?,?)";
             PreparedStatement statument = jdbc.getStatument(sql);
 
             try {
-                statument.setLong(1,tbLibrarian.getLibPhone());
-                statument.setString(2,tbLibrarian.getLibPassword());
-                statument.setLong(3,tbLibrarian.getLibAge());
-                statument.setString(4,tbLibrarian.getLibName());
+                statument.setLong(1, tbLibrarian.getLibPhone());
+                statument.setString(2, tbLibrarian.getLibPassword());
+                statument.setLong(3, tbLibrarian.getLibAge());
+                statument.setString(4, tbLibrarian.getLibName());
 
                 int i = statument.executeUpdate();
-                if (i > 0){
+                if (i > 0) {
                     jdbc.getClose();
                     return true;
-                }else {
+                } else {
                     try {
                         throw new BizException(BizExceptionCode.FAILED_ADD);
                     } catch (BizException e) {
@@ -46,7 +46,7 @@ public class JDBCMethod {
                         return false;
                     }
                 }
-            }catch (SQLException e){
+            } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
                 jdbc.getClose();
@@ -56,18 +56,18 @@ public class JDBCMethod {
 
     }
 
-    public boolean update(Object o){
-        if (o instanceof TbLibrarian){
+    public boolean update(Object o) {
+        if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
             String sql = "update tb_librarian set lib_phone=?,lib_password=?,lib_age=?,lib_name=? where lib_id=?";
             PreparedStatement statument = jdbc.getStatument(sql);
 
             try {
-                statument.setLong(1,tbLibrarian.getLibPhone());
-                statument.setString(2,tbLibrarian.getLibPassword());
-                statument.setLong(3,tbLibrarian.getLibAge());
-                statument.setString(4,tbLibrarian.getLibName());
-                statument.setLong(5,tbLibrarian.getLibId());
+                statument.setLong(1, tbLibrarian.getLibPhone());
+                statument.setString(2, tbLibrarian.getLibPassword());
+                statument.setLong(3, tbLibrarian.getLibAge());
+                statument.setString(4, tbLibrarian.getLibName());
+                statument.setLong(5, tbLibrarian.getLibId());
 
 
             } catch (SQLException e) {
@@ -77,10 +77,10 @@ public class JDBCMethod {
 
             try {
                 int i = statument.executeUpdate();
-                if (i > 0){
+                if (i > 0) {
                     jdbc.getClose();
                     return true;
-                }else {
+                } else {
                     try {
                         throw new BizException(BizExceptionCode.FAILED_ADD);
                     } catch (BizException e) {
@@ -98,18 +98,18 @@ public class JDBCMethod {
         return false;
     }
 
-    public boolean delete(Object o){
-        if (o instanceof TbLibrarian){
+    public boolean delete(Object o) {
+        if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
             String sql = "delete from tb_librarian where lib_id=?";
             PreparedStatement statument = jdbc.getStatument(sql);
             try {
-                statument.setLong(1,tbLibrarian.getLibId());
+                statument.setLong(1, tbLibrarian.getLibId());
                 int i = statument.executeUpdate();
-                if (i > 0){
+                if (i > 0) {
                     jdbc.getClose();
                     return true;
-                }else {
+                } else {
                     try {
                         throw new BizException(BizExceptionCode.FAILED_ADD);
                     } catch (BizException e) {
@@ -127,15 +127,15 @@ public class JDBCMethod {
         return false;
     }
 
-    public Object selectById(Object o){
-        if (o instanceof TbLibrarian){
+    public Object selectById(Object o) {
+        if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
             String sql = "select * from tb_librarian where lib_id=?";
             PreparedStatement statument = jdbc.getStatument(sql);
             try {
-                statument.setLong(1,tbLibrarian.getLibId());
+                statument.setLong(1, tbLibrarian.getLibId());
                 ResultSet resultSet = statument.executeQuery();
-                while (resultSet.next()){
+                while (resultSet.next()) {
                     tbLibrarian.setLibId(resultSet.getLong("lib_id"));
                     tbLibrarian.setLibName(resultSet.getString("lib_name"));
                     tbLibrarian.setLibAge(resultSet.getLong("lib_age"));
@@ -146,7 +146,7 @@ public class JDBCMethod {
             } catch (SQLException e) {
                 e.printStackTrace();
                 return false;
-            }finally {
+            } finally {
                 jdbc.getClose();
             }
         }
