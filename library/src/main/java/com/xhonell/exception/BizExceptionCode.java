@@ -26,26 +26,58 @@ public enum BizExceptionCode {
     private Integer code;
     private String msg;
 
+    /**
+     * BizExceptionCode 的构造函数。
+     * <p>
+     * 这是一个无参构造函数，用于创建 BizExceptionCode 类的实例。
+     * 该构造函数不执行任何操作。
+     */
     BizExceptionCode() {
     }
 
+    /**
+     * 构造一个BizExceptionCode对象
+     *
+     * @param code 异常代码
+     * @param msg  异常信息
+     */
     BizExceptionCode(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
+    /**
+     * 获取代码值
+     *
+     * @return 返回一个Integer类型的代码值
+     */
     public Integer getCode() {
         return code;
     }
 
+    /**
+     * 设置代码值
+     *
+     * @param code 要设置的代码值
+     */
     public void setCode(Integer code) {
         this.code = code;
     }
 
+    /**
+     * 获取消息内容
+     *
+     * @return 返回消息字符串
+     */
     public String getMsg() {
         return msg;
     }
 
+    /**
+     * 设置消息内容
+     *
+     * @param msg 要设置的消息内容
+     */
     public void setMsg(String msg) {
         this.msg = msg;
     }

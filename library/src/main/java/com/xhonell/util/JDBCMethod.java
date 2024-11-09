@@ -21,6 +21,13 @@ import static com.xhonell.MainApp.jdbc;
  * @since 1.8
  */
 public class JDBCMethod {
+    /**
+     * 向数据库中添加一个图书管理员信息
+     *
+     * @param o 要添加的图书管理员对象
+     * @return 如果添加成功返回true，否则返回false
+     * @throws BizException 如果添加失败，则抛出业务异常
+     */
     public boolean add(Object o) {
         if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
@@ -56,6 +63,13 @@ public class JDBCMethod {
 
     }
 
+    /**
+     * 更新图书管理员信息
+     *
+     * @param o 要更新的图书管理员对象
+     * @return 如果更新成功返回true，否则返回false
+     * @throws BizException 如果更新失败，抛出BizException异常
+     */
     public boolean update(Object o) {
         if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
@@ -98,6 +112,13 @@ public class JDBCMethod {
         return false;
     }
 
+    /**
+     * 从数据库中删除指定的对象
+     *
+     * @param o 要删除的对象
+     * @return 如果删除成功返回true，否则返回false
+     * @throws BizException 如果删除失败，抛出BizException异常
+     */
     public boolean delete(Object o) {
         if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;
@@ -127,6 +148,12 @@ public class JDBCMethod {
         return false;
     }
 
+    /**
+     * 根据ID选择数据
+     *
+     * @param o 待查询的对象
+     * @return 如果查询成功，返回查询到的对象；否则返回false
+     */
     public Object selectById(Object o) {
         if (o instanceof TbLibrarian) {
             TbLibrarian tbLibrarian = (TbLibrarian) o;

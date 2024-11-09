@@ -29,6 +29,11 @@ public class JDBC {
         }
     }
 
+    /**
+     * 获取数据库连接
+     *
+     * @return 数据库连接对象
+     */
     public Connection getConnect() {
 
         try {
@@ -40,6 +45,13 @@ public class JDBC {
         return conn;
     }
 
+    /**
+     * 获取一个预编译的 SQL 语句
+     *
+     * @param sql 要执行的 SQL 语句
+     * @return PreparedStatement 对象，包含预编译的 SQL 语句
+     * @throws SQLException 如果 SQL 语句预编译失败，则抛出 SQLException 异常
+     */
     public PreparedStatement getStatument(String sql) {
         try {
             if (conn == null || conn.isClosed())
@@ -51,6 +63,11 @@ public class JDBC {
         return stmt;
     }
 
+    /**
+     * 关闭资源。
+     *
+     * @return 如果所有资源成功关闭，则返回true；否则返回false。
+     */
     public boolean getClose() {
         try {
             if (rs != null && !rs.isClosed())

@@ -24,6 +24,11 @@ import static com.xhonell.view.Index.scanner;
  * @since 1.8
  */
 public class LibraryTypeManger {
+    /**
+     * 添加图书类型
+     * <p>
+     * 该方法用于向数据库中添加新的图书类型
+     */
     public void addLibraryType() {
         System.out.println("====== 添加图书类型 ======");
         TbClassify tbLibrary = new TbClassify();
@@ -47,6 +52,9 @@ public class LibraryTypeManger {
         }
     }
 
+    /**
+     * 更新图书类型的方法
+     */
     public void updateLibraryType() {
         System.out.println("====== 修改图书类型 ======");
         TbClassify tbLibrary = new TbClassify();
@@ -70,6 +78,9 @@ public class LibraryTypeManger {
         }
     }
 
+    /**
+     * 查询图书类型
+     */
     public void selectLibraryType() {
         System.out.println("====== 查询图书类型 ======");
         List<TbClassify> list = new ArrayList<>();
@@ -96,6 +107,9 @@ public class LibraryTypeManger {
         }
     }
 
+    /**
+     * 删除图书类型
+     */
     public void deleteLibraryType() {
         System.out.println("====== 删除图书类型 ======");
         TbClassify tbLibrary = new TbClassify();

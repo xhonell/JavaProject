@@ -25,6 +25,9 @@ import static com.xhonell.view.Index.scanner;
  * @since 1.8
  */
 public class IndexMenu {
+    /**
+     * 显示菜单并处理用户选择的操作
+     */
     public void menu() {
         while (true) {
             System.out.println("====== 菜单界面 ======");
@@ -52,6 +55,9 @@ public class IndexMenu {
         }
     }
 
+    /**
+     * 查询所有管理员信息
+     */
     private void queryAllAdmin() {
         System.out.println("======进入查询页面======");
         List<TbLibrarian> list = new ArrayList<>();
@@ -84,6 +90,11 @@ public class IndexMenu {
 
     }
 
+    /**
+     * 删除管理员
+     * <p>
+     * 删除指定管理员信息
+     */
     private void deleteAdmin() {
         System.out.println("======进入删除页面======");
         System.out.print("请输入您要删除的管理员Id：");
@@ -106,6 +117,15 @@ public class IndexMenu {
 
     }
 
+    /**
+     * 更新管理员信息
+     *
+     * 此方法用于更新管理员的信息，包括姓名、手机号和年龄。
+     * 首先提示用户输入要修改的管理员ID，然后根据用户输入更新数据库中的管理员信息。
+     * 如果更新成功，输出“修改成功”；如果更新失败，输出“修改失败”并调用menu方法重新显示菜单。
+     *
+     * @throws RuntimeException 如果在执行SQL语句时发生异常，将抛出运行时异常
+     */
     private void updateAdmin() {
         System.out.println("======进入修改页面======");
         System.out.print("请输入您要修改的管理员Id：");
@@ -134,6 +154,9 @@ public class IndexMenu {
 
     }
 
+    /**
+     * 添加管理员信息
+     */
     private void addAdmin() {
         System.out.println("======进入添加页面======");
         TbLibrarian tbLibrarian = new TbLibrarian();

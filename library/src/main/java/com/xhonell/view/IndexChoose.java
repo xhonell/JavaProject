@@ -22,6 +22,11 @@ import static com.xhonell.view.Index.scanner;
  * @since 1.8
  */
 public class IndexChoose {
+    /**
+     * 登录方法
+     * <p>
+     * 登录系统，根据用户输入的手机号和密码验证用户身份，并根据用户角色显示相应的菜单
+     */
     public void login() {
         System.out.println("======进入登录页面======");
         System.out.println("请输入您的手机号：");
@@ -77,6 +82,14 @@ public class IndexChoose {
     }
 
 
+    /**
+     * 取消当前操作或任务。
+     *
+     * 这个方法用于取消任何正在进行的操作或任务。具体行为取决于具体的实现，
+     * 例如，如果这是一个下载任务，那么调用此方法可能会停止下载。
+     *
+     * 注意：不是所有的操作都支持取消，如果操作不支持取消，则此方法可能不会有任何效果。
+     */
     public void cancel() {
     }
 }
